@@ -1,0 +1,200 @@
+[
+    {
+        "id": "e01d0510b3895cc2",
+        "type": "tab",
+        "label": "Flow 5",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c797925ccd2d2e54",
+        "type": "ui_text_input",
+        "z": "e01d0510b3895cc2",
+        "name": "",
+        "label": "enter CODE",
+        "tooltip": "",
+        "group": "cea617cb8687fb94",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "581b2199689b524d"
+            ]
+        ]
+    },
+    {
+        "id": "581b2199689b524d",
+        "type": "function",
+        "z": "e01d0510b3895cc2",
+        "name": "save data",
+        "func": "flow.set(\"value\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fdb8f7138cad46a7",
+        "type": "ui_button",
+        "z": "e01d0510b3895cc2",
+        "name": "",
+        "group": "cea617cb8687fb94",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 110,
+        "y": 220,
+        "wires": [
+            [
+                "46f27ce65b6304f0"
+            ]
+        ]
+    },
+    {
+        "id": "46f27ce65b6304f0",
+        "type": "function",
+        "z": "e01d0510b3895cc2",
+        "name": "",
+        "func": "msg.payload = flow.get(\"value\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 220,
+        "wires": [
+            [
+                "8018f7bd723c11e8"
+            ]
+        ]
+    },
+    {
+        "id": "8018f7bd723c11e8",
+        "type": "mqtt out",
+        "z": "e01d0510b3895cc2",
+        "name": "",
+        "topic": "21126074/textinput",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "c547ee8737aca4d1",
+        "x": 570,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "47b8639bbafea8ac",
+        "type": "mqtt in",
+        "z": "e01d0510b3895cc2",
+        "name": "",
+        "topic": "21126074/CODE",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "c547ee8737aca4d1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 280,
+        "wires": [
+            [
+                "cfba9d035aace138"
+            ]
+        ]
+    },
+    {
+        "id": "cfba9d035aace138",
+        "type": "ui_text",
+        "z": "e01d0510b3895cc2",
+        "group": "cea617cb8687fb94",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "name",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 370,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "cea617cb8687fb94",
+        "type": "ui_group",
+        "name": "21126074",
+        "tab": "cb885356982ce9cb",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c547ee8737aca4d1",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "cb885356982ce9cb",
+        "type": "ui_tab",
+        "name": "Tab 2",
+        "icon": "dashboard",
+        "order": 2
+    }
+]

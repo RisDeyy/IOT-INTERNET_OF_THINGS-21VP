@@ -1,0 +1,62 @@
+#include<WiFi.h>
+#include"PubSubClient.h"
+const char*ssid="Wokwi-GUEST";
+const char*password="";
+const char* mqttSever ="test.mosquitto.org";
+int port =1883;
+WiFiClient espClient;
+PubSubClient client(espClient);
+void wifiConnect(){
+  WiFi.begin(ssid,password);
+  while (WiFi.status() != WL_CONNECTED){
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("Connected!");
+}
+void mqttReconnect(){
+  while(!client.connected()){
+    Serial.print("Attempting MQTT connection....");
+   if(client.connect("21126074")){
+    Serial.println("connected");
+    client.subscribe("21126074/textinput");
+  }else{
+    Serial.println("TRY AGAIN IN 5 SECONDS...");
+    delay(5000);
+  }
+}
+}
+void callback(char* topic,byte* message,unsigned int length){
+  Serial.print(topic);
+  String stMessage;
+  for(int i=0;i<length;i++){
+    stMessage += (char)message[i];
+  }
+  Serial.println(stMessage);
+  if(stMessage == "21126074"){
+    client.publish("21126074/CODE", "Đào Thành Lực");
+  }
+   if(stMessage == "21126076"){
+    client.publish("21126076/CODE", "Đỗ Anh Nghĩa");
+  }
+   if(stMessage == "21126089"){
+    client.publish("21126089/CODE", "Nguyễn Thể Phụng");
+  }
+}
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(115200);
+  Serial.print("Connecting to wifi");
+  wifiConnect();
+  client.setServer(mqttSever,port);
+  client.setCallback(callback);
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
+}
+
+void loop() {
+  if(!client.connected()){
+    mqttReconnect();
+  }
+  client.loop();
+}

@@ -1,0 +1,3709 @@
+[
+    {
+        "id": "30caf83444db3758",
+        "type": "tab",
+        "label": "21126089",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9f0b00e9b4045586",
+        "type": "mqtt in",
+        "z": "30caf83444db3758",
+        "name": "",
+        "topic": "celcious",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "1da70853d81f2476",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 60,
+        "y": 1320,
+        "wires": [
+            [
+                "95365d1b5c5b8f1a",
+                "e2d370a1fa20876b",
+                "3490cadd2fd53b78",
+                "f785bed7c1061996",
+                "c8b17c167a6c6cb0",
+                "d05b53e93c6c7496"
+            ]
+        ]
+    },
+    {
+        "id": "966a077e60d9de09",
+        "type": "mqtt in",
+        "z": "30caf83444db3758",
+        "name": "",
+        "topic": "count",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "1da70853d81f2476",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 200,
+        "wires": [
+            [
+                "8bc19940cc4a4fa2",
+                "e2e34a9b6ce8ad7c",
+                "b3c874dca29bc85e",
+                "736776a66fa4dc1b",
+                "f7888d766538d8df",
+                "01a161277df7d0a1"
+            ]
+        ]
+    },
+    {
+        "id": "9208e27c7e281c73",
+        "type": "ui_switch",
+        "z": "30caf83444db3758",
+        "name": "",
+        "label": "ON/OFF LIGHT",
+        "tooltip": "",
+        "group": "eea166b605f3a44d",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "ON",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "OFF",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 860,
+        "y": 1020,
+        "wires": [
+            [
+                "269481fe0d4d5c5d"
+            ]
+        ]
+    },
+    {
+        "id": "269481fe0d4d5c5d",
+        "type": "mqtt out",
+        "z": "30caf83444db3758",
+        "name": "",
+        "topic": "LIGHT",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1da70853d81f2476",
+        "x": 1010,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "3490cadd2fd53b78",
+        "type": "ui_gauge",
+        "z": "30caf83444db3758",
+        "name": "",
+        "group": "d117d717b92e5b33",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Nhiệt độ",
+        "label": "Độ C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 280,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "8bc19940cc4a4fa2",
+        "type": "ui_text",
+        "z": "30caf83444db3758",
+        "group": "8c5febd962f8fd21",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "Số người lên xe",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 340,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "9cea41ba8002dda2",
+        "type": "e-mail",
+        "z": "30caf83444db3758",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 890,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "7b4d9b2b490d8efa",
+        "type": "e-mail",
+        "z": "30caf83444db3758",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 410,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "95365d1b5c5b8f1a",
+        "type": "ui_text",
+        "z": "30caf83444db3758",
+        "group": "d117d717b92e5b33",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "Nhiệt độ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 280,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "bf35d40ea562aefc",
+        "type": "ui_chart",
+        "z": "30caf83444db3758",
+        "name": "",
+        "group": "d117d717b92e5b33",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "Biểu đồ nhiệt độ trong ngày",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#afe2e9",
+            "#ef0fff",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 520,
+        "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1c7d2439d7ea35b5",
+        "type": "ui_text_input",
+        "z": "30caf83444db3758",
+        "name": "",
+        "label": "ON/OFF LIGHT",
+        "tooltip": "",
+        "group": "eea166b605f3a44d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 600,
+        "y": 1020,
+        "wires": [
+            [
+                "9208e27c7e281c73"
+            ]
+        ]
+    },
+    {
+        "id": "e99495cddab26022",
+        "type": "mqtt in",
+        "z": "30caf83444db3758",
+        "name": "",
+        "topic": "value_pt",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "1da70853d81f2476",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 660,
+        "wires": [
+            [
+                "822853970eede6f0",
+                "b3598c2023d2e726",
+                "8a40aa0e682ab54e"
+            ]
+        ]
+    },
+    {
+        "id": "ed57a73e29bdd7ee",
+        "type": "e-mail",
+        "z": "30caf83444db3758",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 490,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "57929c21816a4abb",
+        "type": "ui_text",
+        "z": "30caf83444db3758",
+        "group": "eea166b605f3a44d",
+        "order": 5,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "Độ sáng môi trường",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 480,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "e2d370a1fa20876b",
+        "type": "ui_slider",
+        "z": "30caf83444db3758",
+        "name": "",
+        "label": "slider",
+        "tooltip": "",
+        "group": "d117d717b92e5b33",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 270,
+        "y": 1400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0ea4dd586b94b942",
+        "type": "ui_text",
+        "z": "30caf83444db3758",
+        "group": "6c21c615b4ad9b2e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Họ và Tên",
+        "format": "{{msg.payload.ten}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 290,
+        "y": 2720,
+        "wires": []
+    },
+    {
+        "id": "81ce91863de67611",
+        "type": "ui_text",
+        "z": "30caf83444db3758",
+        "group": "6c21c615b4ad9b2e",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Năm sinh",
+        "format": "{{msg.payload.ns}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 280,
+        "y": 2780,
+        "wires": []
+    },
+    {
+        "id": "3b27cb19d7ce26bf",
+        "type": "ui_text",
+        "z": "30caf83444db3758",
+        "group": "6c21c615b4ad9b2e",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Giới tính",
+        "format": "{{msg.payload.gt}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 280,
+        "y": 2840,
+        "wires": []
+    },
+    {
+        "id": "cbcdc3cd240c425b",
+        "type": "ui_form",
+        "z": "30caf83444db3758",
+        "name": "",
+        "label": "",
+        "group": "669d1f94be3aa75f",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Họ và tên",
+                "value": "ten",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Năm sinh ",
+                "value": "ns",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Giới Tính",
+                "value": "gt",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Email",
+                "value": "email",
+                "type": "email",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "ten": "",
+            "ns": "",
+            "gt": "",
+            "email": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 70,
+        "y": 2980,
+        "wires": [
+            [
+                "0ea4dd586b94b942",
+                "81ce91863de67611",
+                "3b27cb19d7ce26bf",
+                "86767f02bd205f0d",
+                "e03b037f362871d6",
+                "7f85b8d0d6334fea"
+            ]
+        ]
+    },
+    {
+        "id": "8a40aa0e682ab54e",
+        "type": "ui_slider",
+        "z": "30caf83444db3758",
+        "name": "",
+        "label": "Brightness",
+        "tooltip": "",
+        "group": "eea166b605f3a44d",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "2000",
+        "step": 1,
+        "className": "",
+        "x": 490,
+        "y": 760,
+        "wires": [
+            [
+                "663a5846b1c215cf"
+            ]
+        ]
+    },
+    {
+        "id": "663a5846b1c215cf",
+        "type": "ui_gauge",
+        "z": "30caf83444db3758",
+        "name": "",
+        "group": "eea166b605f3a44d",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Độ sáng môi trường (>=1000 trời tối)",
+        "label": "độ tối",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "2000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 790,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "3101ff431bdca663",
+        "type": "moment",
+        "z": "30caf83444db3758",
+        "name": "ngay_thang",
+        "topic": "",
+        "input": "",
+        "inputType": "msg",
+        "inTz": "Asia/Saigon",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "YYYY-MM-DD ",
+        "locale": "en-US",
+        "output": "",
+        "outputType": "msg",
+        "outTz": "Asia/Saigon",
+        "x": 370,
+        "y": 3480,
+        "wires": [
+            [
+                "07f84dedbda2e170"
+            ]
+        ]
+    },
+    {
+        "id": "c0652b95ab98be12",
+        "type": "moment",
+        "z": "30caf83444db3758",
+        "name": "gio",
+        "topic": "",
+        "input": "",
+        "inputType": "msg",
+        "inTz": "Asia/Saigon",
+        "adjAmount": 0,
+        "adjType": "hours",
+        "adjDir": "add",
+        "format": "HH:mm:ss",
+        "locale": "en-US",
+        "output": "",
+        "outputType": "msg",
+        "outTz": "Asia/Saigon",
+        "x": 350,
+        "y": 3580,
+        "wires": [
+            [
+                "8cbcf78f8f569dc1"
+            ]
+        ]
+    },
+    {
+        "id": "84261b97ab4208d8",
+        "type": "inject",
+        "z": "30caf83444db3758",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 3540,
+        "wires": [
+            [
+                "3101ff431bdca663",
+                "c0652b95ab98be12"
+            ]
+        ]
+    },
+    {
+        "id": "07f84dedbda2e170",
+        "type": "ui_text",
+        "z": "30caf83444db3758",
+        "group": "4962aa73c8a15fe8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Ngày",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 650,
+        "y": 3480,
+        "wires": []
+    },
+    {
+        "id": "8cbcf78f8f569dc1",
+        "type": "ui_text",
+        "z": "30caf83444db3758",
+        "group": "4962aa73c8a15fe8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Giờ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 650,
+        "y": 3580,
+        "wires": []
+    },
+    {
+        "id": "f95775115e57b376",
+        "type": "inject",
+        "z": "30caf83444db3758",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 60,
+        "y": 2220,
+        "wires": [
+            [
+                "1eb934f925032ab9"
+            ]
+        ]
+    },
+    {
+        "id": "1eb934f925032ab9",
+        "type": "ui_dropdown",
+        "z": "30caf83444db3758",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "e25991640517dc95",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Hà Nội",
+                "value": 1,
+                "type": "num"
+            },
+            {
+                "label": "Hồ Chí Minh",
+                "value": "2",
+                "type": "str"
+            },
+            {
+                "label": "Nghệ An",
+                "value": "3",
+                "type": "str"
+            },
+            {
+                "label": "Đà Nẳng",
+                "value": "4",
+                "type": "str"
+            },
+            {
+                "label": "Hải Phòng",
+                "value": "5",
+                "type": "str"
+            },
+            {
+                "label": "Biên Hòa",
+                "value": "6",
+                "type": "str"
+            },
+            {
+                "label": "Huế",
+                "value": "7",
+                "type": "str"
+            },
+            {
+                "label": "Nha Trang",
+                "value": "8",
+                "type": "str"
+            },
+            {
+                "label": "Cần Thơ",
+                "value": "9",
+                "type": "str"
+            },
+            {
+                "label": "Rạch Giá",
+                "value": "10",
+                "type": "str"
+            },
+            {
+                "label": "Qui Nhơ",
+                "value": "11",
+                "type": "str"
+            },
+            {
+                "label": "Vũng Tàu",
+                "value": "12",
+                "type": "str"
+            },
+            {
+                "label": "Đà Lạt",
+                "value": "13",
+                "type": "str"
+            },
+            {
+                "label": "Nam Định",
+                "value": "14",
+                "type": "str"
+            },
+            {
+                "label": "Vinh",
+                "value": "15",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 240,
+        "y": 2220,
+        "wires": [
+            [
+                "690f1e63fbd7d57d"
+            ]
+        ]
+    },
+    {
+        "id": "690f1e63fbd7d57d",
+        "type": "switch",
+        "z": "30caf83444db3758",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "4",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "5",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "6",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "7",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "8",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "9",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "10",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "11",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "12",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "13",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "14",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "15",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 15,
+        "x": 450,
+        "y": 2220,
+        "wires": [
+            [
+                "e6cc57d2305c5295"
+            ],
+            [
+                "2835e55559b58fab"
+            ],
+            [
+                "06ea23598eea3dd8"
+            ],
+            [
+                "fdb2bf124026bce1"
+            ],
+            [
+                "08636e2ddb9ebf41"
+            ],
+            [
+                "dd2f3e7090c3f753"
+            ],
+            [
+                "1536d2b8d248d1ef"
+            ],
+            [
+                "aa37e9b909827749"
+            ],
+            [
+                "33216d8f72f7f40e"
+            ],
+            [
+                "d595a3982ffcdc0a"
+            ],
+            [
+                "50c4b0756d795332"
+            ],
+            [
+                "4cec3f2febc89c33"
+            ],
+            [
+                "7e60be156430c5b9"
+            ],
+            [
+                "ef355bcf53b411d8"
+            ],
+            [
+                "b2f850dc6fa49a15"
+            ]
+        ]
+    },
+    {
+        "id": "e6cc57d2305c5295",
+        "type": "http request",
+        "z": "30caf83444db3758",
+        "name": "1",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?id=1581130&appid=a8b048b645dd97ed5a954a5113f25b5b&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 690,
+        "y": 1940,
+        "wires": [
+            [
+                "6003e0bf3266b49a"
+            ]
+        ]
+    },
+    {
+        "id": "2835e55559b58fab",
+        "type": "http request",
+        "z": "30caf83444db3758",
+        "name": "2",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?id=1566083&appid=a8b048b645dd97ed5a954a5113f25b5b&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 690,
+        "y": 1980,
+        "wires": [
+            [
+                "6003e0bf3266b49a"
+            ]
+        ]
+    },
+    {
+        "id": "06ea23598eea3dd8",
+        "type": "http request",
+        "z": "30caf83444db3758",
+        "name": "3",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?id=1559969&appid=a8b048b645dd97ed5a954a5113f25b5b&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 690,
+        "y": 2020,
+        "wires": [
+            [
+                "6003e0bf3266b49a"
+            ]
+        ]
+    },
+    {
+        "id": "6003e0bf3266b49a",
+        "type": "json",
+        "z": "30caf83444db3758",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 910,
+        "y": 2220,
+        "wires": [
+            [
+                "831538bd6e7fcd7a",
+                "fd04848a13c8c26c",
+                "061a9a07130a1906",
+                "af30b2ebe47973e9",
+                "31d2b7a7baa8d54f",
+                "0f53610d9f7cde7f",
+                "ade2cfaeaa44bc84",
+                "0d188c72c8906061",
+                "274b75402cbef424"
+            ]
+        ]
+    },
+    {
+        "id": "831538bd6e7fcd7a",
+        "type": "ui_gauge",
+        "z": "30caf83444db3758",
+        "name": "",
+        "group": "f10512a1143e0cb0",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Nhiệt độ ",
+        "label": "Độ C",
+        "format": "{{msg.payload.main.temp}}",
+        "min": "-40",
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 1120,
+        "y": 2080,
+        "wires": []
+    },
+    {
+        "id": "fd04848a13c8c26c",
+        "type": "ui_gauge",
+        "z": "30caf83444db3758",
+        "name": "",
+        "group": "395904b8f60c7667",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Sức gió ",
+        "label": "M/s",
+        "format": "{{msg.payload.wind.speed}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 1120,
+        "y": 2120,
+        "wires": []
+    },
+    {
+        "id": "061a9a07130a1906",
+        "type": "ui_gauge",
+        "z": "30caf83444db3758",
+        "name": "",
+        "group": "7bc5f62e0913ba30",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Độ ẩm",
+        "label": "%",
+        "format": "{{msg.payload.main.humidity}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 1110,
+        "y": 2160,
+        "wires": []
+    },
+    {
+        "id": "acedbd5f7dd5dd7a",
+        "type": "e-mail",
+        "z": "30caf83444db3758",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 1470,
+        "y": 2220,
+        "wires": []
+    },
+    {
+        "id": "1abe23a0a338446a",
+        "type": "e-mail in",
+        "z": "30caf83444db3758",
+        "name": "",
+        "protocol": "IMAP",
+        "server": "imap.gmail.com",
+        "useSSL": true,
+        "autotls": "never",
+        "port": "993",
+        "box": "INBOX",
+        "disposition": "Read",
+        "criteria": "UNSEEN",
+        "repeat": "20",
+        "fetch": "auto",
+        "inputs": 0,
+        "x": 510,
+        "y": 2960,
+        "wires": [
+            [
+                "53bd7f5c6dfee559"
+            ]
+        ]
+    },
+    {
+        "id": "70e9b83d52a45ad1",
+        "type": "ui_led",
+        "z": "30caf83444db3758",
+        "order": 6,
+        "group": "eea166b605f3a44d",
+        "width": "6",
+        "height": "2",
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "Dark",
+                "valueType": "str"
+            },
+            {
+                "color": "#008000",
+                "value": "Bright",
+                "valueType": "str"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 430,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "53bd7f5c6dfee559",
+        "type": "ui_text",
+        "z": "30caf83444db3758",
+        "group": "7b2e1d468ecab73f",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Thông tin phản hồi:",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 730,
+        "y": 2960,
+        "wires": []
+    },
+    {
+        "id": "5e0b3bfa27ca895c",
+        "type": "ui_button",
+        "z": "30caf83444db3758",
+        "name": "",
+        "group": "d117d717b92e5b33",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Gửi thông tin về email",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "send",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 520,
+        "y": 1440,
+        "wires": [
+            [
+                "caa8e1482c1a8749"
+            ]
+        ]
+    },
+    {
+        "id": "69d9cf8b3b4aab7e",
+        "type": "ui_button",
+        "z": "30caf83444db3758",
+        "name": "",
+        "group": "8c5febd962f8fd21",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Gửi thông tin về email",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "send",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 140,
+        "y": 400,
+        "wires": [
+            [
+                "57de87d0f69e2912",
+                "dde7def4f26ff331"
+            ]
+        ]
+    },
+    {
+        "id": "bb689d0f8ce470ec",
+        "type": "ui_button",
+        "z": "30caf83444db3758",
+        "name": "",
+        "group": "eea166b605f3a44d",
+        "order": 11,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Gửi thông tin về email",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "send",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 140,
+        "y": 820,
+        "wires": [
+            [
+                "47035b0e39bbb160"
+            ]
+        ]
+    },
+    {
+        "id": "f785bed7c1061996",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "savenhietdo",
+        "func": "flow.set(\"nhietdo\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 1440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "caa8e1482c1a8749",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "nhietdo",
+        "func": "msg.payload = flow.get(\"nhietdo\");\nmsg.to = flow.get(\"email\");\nmsg.topic = flow.get(\"c\")||\"Nhiệt độ\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 1440,
+        "wires": [
+            [
+                "9cea41ba8002dda2"
+            ]
+        ]
+    },
+    {
+        "id": "e2e34a9b6ce8ad7c",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "savenguoi",
+        "func": "\n    \nflow.set(\"nguoi0\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "57de87d0f69e2912",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "nguoi",
+        "func": "msg.payload = flow.get(\"nguoi0\");\nmsg.to = flow.get(\"email\");\nmsg.topic = flow.get(\"a\")||\"Số người hiện tại\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 460,
+        "wires": [
+            [
+                "7b4d9b2b490d8efa"
+            ]
+        ]
+    },
+    {
+        "id": "b3598c2023d2e726",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "saveden",
+        "func": "flow.set(\"den\",msg.payload)\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "47035b0e39bbb160",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "den",
+        "func": "msg.payload = flow.get(\"den\");\nif(msg.payload >= 1000){\n    msg.payload = \"Bright\";\n}else{\n    msg.payload = \"Dark\";\n}\nmsg.to = flow.get(\"email\");\nmsg.topic = flow.get(\"b\")||\"Độ sáng môi trường\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 820,
+        "wires": [
+            [
+                "ed57a73e29bdd7ee"
+            ]
+        ]
+    },
+    {
+        "id": "3e0ef861f23a3ff8",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "enabled",
+        "func": "msg.enabled = false;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1020,
+        "wires": [
+            [
+                "1c7d2439d7ea35b5"
+            ]
+        ]
+    },
+    {
+        "id": "db44daacc33b166b",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "enabled",
+        "func": "msg.enabled = true;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 920,
+        "wires": [
+            [
+                "1c7d2439d7ea35b5"
+            ]
+        ]
+    },
+    {
+        "id": "5b6860514796ef47",
+        "type": "ui_button",
+        "z": "30caf83444db3758",
+        "name": "",
+        "group": "4962aa73c8a15fe8",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Bật điều khiển đèn",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "https",
+        "payload": "  ",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 90,
+        "y": 920,
+        "wires": [
+            [
+                "db44daacc33b166b"
+            ]
+        ]
+    },
+    {
+        "id": "2779db234e62a7f8",
+        "type": "ui_button",
+        "z": "30caf83444db3758",
+        "name": "",
+        "group": "4962aa73c8a15fe8",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Tắt điều khiển đèn",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "grey",
+        "className": "",
+        "icon": "https",
+        "payload": " ",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 110,
+        "y": 1020,
+        "wires": [
+            [
+                "3e0ef861f23a3ff8"
+            ]
+        ]
+    },
+    {
+        "id": "b3c874dca29bc85e",
+        "type": "ui_gauge",
+        "z": "30caf83444db3758",
+        "name": "",
+        "group": "8c5febd962f8fd21",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Số người hiện tại",
+        "label": " ",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 350,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "86767f02bd205f0d",
+        "type": "ui_text",
+        "z": "30caf83444db3758",
+        "group": "6c21c615b4ad9b2e",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Email",
+        "format": "{{msg.payload.email}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 270,
+        "y": 2900,
+        "wires": []
+    },
+    {
+        "id": "e03b037f362871d6",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "saveemail",
+        "func": "flow.set(\"email\",msg.payload.email)\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 2960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "176439a5a3c1789d",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "thoitiet",
+        "func": "msg.to = flow.get(\"email\");\nmsg.payload = flow.get(\"thoitiet\");\nmsg.topic = flow.get(\"d\")||\"Thời tiết hôm nay\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 2220,
+        "wires": [
+            [
+                "acedbd5f7dd5dd7a"
+            ]
+        ]
+    },
+    {
+        "id": "f98b66e4bba4cc94",
+        "type": "ui_chart",
+        "z": "30caf83444db3758",
+        "name": "",
+        "group": "8c5febd962f8fd21",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "label": "Biểu đồ số người trong ngày",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 560,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2ab5af3d30958852",
+        "type": "ui_form",
+        "z": "30caf83444db3758",
+        "name": "",
+        "label": "",
+        "group": "eea166b605f3a44d",
+        "order": 12,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Change email subject",
+                "value": "b",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "b": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 550,
+        "y": 2700,
+        "wires": [
+            [
+                "6bbf20c6a973e6da"
+            ]
+        ]
+    },
+    {
+        "id": "40e74799edaabd1a",
+        "type": "ui_form",
+        "z": "30caf83444db3758",
+        "name": "",
+        "label": "",
+        "group": "8c5febd962f8fd21",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Change email subject",
+                "value": "a",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "a": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 770,
+        "y": 2680,
+        "wires": [
+            [
+                "6bbf20c6a973e6da"
+            ]
+        ]
+    },
+    {
+        "id": "7a62a52fcd466fc9",
+        "type": "ui_form",
+        "z": "30caf83444db3758",
+        "name": "",
+        "label": "",
+        "group": "d117d717b92e5b33",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Change email subject",
+                "value": "c",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "c": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 550,
+        "y": 2880,
+        "wires": [
+            [
+                "6bbf20c6a973e6da"
+            ]
+        ]
+    },
+    {
+        "id": "6bbf20c6a973e6da",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "save_email_subject",
+        "func": "flow.set(\"a\",msg.payload.a)\nflow.set(\"b\",msg.payload.b)\nflow.set(\"c\",msg.payload.c)\nflow.set(\"d\",msg.payload.d)\nflow.set(\"e\",msg.payload.e)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 2780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "01ba5dbc2f106cf2",
+        "type": "file",
+        "z": "30caf83444db3758",
+        "name": "",
+        "filename": "D:\\VLDC\\21126089(Thongtinkh).txt",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1300,
+        "y": 3020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "79ecda0df45c1f13",
+        "type": "csv",
+        "z": "30caf83444db3758",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 850,
+        "y": 3280,
+        "wires": [
+            [
+                "4354dbb94f7ea1ea"
+            ]
+        ]
+    },
+    {
+        "id": "cdae2651d520d6a0",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "get_thong_tin",
+        "func": "\npayload={\"ngaythang\":msg.payload.tg,\"ks\":msg.topic,\"ten\":msg.payload.ten,\"ns\":msg.payload.ns,\"gt\":msg.payload.gt,\"emailfile\":msg.payload.email};\nmsg.payload=payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 3020,
+        "wires": [
+            [
+                "804910498e642e02"
+            ]
+        ]
+    },
+    {
+        "id": "804910498e642e02",
+        "type": "csv",
+        "z": "30caf83444db3758",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 1010,
+        "y": 3020,
+        "wires": [
+            [
+                "01ba5dbc2f106cf2"
+            ]
+        ]
+    },
+    {
+        "id": "17619936c1663948",
+        "type": "moment",
+        "z": "30caf83444db3758",
+        "name": "ngay_thang",
+        "topic": "",
+        "input": "",
+        "inputType": "msg",
+        "inTz": "Asia/Saigon",
+        "adjAmount": 0,
+        "adjType": "hours",
+        "adjDir": "add",
+        "format": "[Date: ]YYYY-MM-DD ",
+        "locale": "en-US",
+        "output": "payload.tg",
+        "outputType": "msg",
+        "outTz": "Asia/Saigon",
+        "x": 490,
+        "y": 3020,
+        "wires": [
+            [
+                "cdae2651d520d6a0"
+            ]
+        ]
+    },
+    {
+        "id": "7b235a23352bcaf7",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "set_nguoi",
+        "func": "nguoi0 = flow.get(\"nguoi0\");\nif(nguoi0==undefined){\n    nguoi0 = 0;\n} \nnguoi1 = flow.get(\"nguoi1\") || 0;\n\nif(nguoi0!=nguoi1){\n    flow.set(\"nguoi1\",nguoi0)\n    \n    payload={\"da\":msg.to,\"zx\":msg.topic,\"bv\":nguoi0};\n    msg.payload=payload;\n   \n}\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 3280,
+        "wires": [
+            [
+                "79ecda0df45c1f13"
+            ]
+        ]
+    },
+    {
+        "id": "96a9a288dfcf361c",
+        "type": "change",
+        "z": "30caf83444db3758",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Số người trên xe",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 250,
+        "y": 3280,
+        "wires": [
+            [
+                "7a6dadb0adac9465"
+            ]
+        ]
+    },
+    {
+        "id": "7f85b8d0d6334fea",
+        "type": "change",
+        "z": "30caf83444db3758",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Thông tin khách hàng: ",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 3020,
+        "wires": [
+            [
+                "17619936c1663948"
+            ]
+        ]
+    },
+    {
+        "id": "4354dbb94f7ea1ea",
+        "type": "file",
+        "z": "30caf83444db3758",
+        "name": "",
+        "filename": "D:\\VLDC\\21126089(nguoi).txt",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1100,
+        "y": 3280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "736776a66fa4dc1b",
+        "type": "change",
+        "z": "30caf83444db3758",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Người",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 180,
+        "wires": [
+            [
+                "f98b66e4bba4cc94"
+            ]
+        ]
+    },
+    {
+        "id": "fdb2bf124026bce1",
+        "type": "http request",
+        "z": "30caf83444db3758",
+        "name": "4",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?id=1583992&appid=a8b048b645dd97ed5a954a5113f25b5b&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 690,
+        "y": 2060,
+        "wires": [
+            [
+                "6003e0bf3266b49a"
+            ]
+        ]
+    },
+    {
+        "id": "08636e2ddb9ebf41",
+        "type": "http request",
+        "z": "30caf83444db3758",
+        "name": "5",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?id=1581298&appid=a8b048b645dd97ed5a954a5113f25b5b&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 690,
+        "y": 2100,
+        "wires": [
+            [
+                "6003e0bf3266b49a"
+            ]
+        ]
+    },
+    {
+        "id": "dd2f3e7090c3f753",
+        "type": "http request",
+        "z": "30caf83444db3758",
+        "name": "6",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?id=1587923&appid=a8b048b645dd97ed5a954a5113f25b5b&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 690,
+        "y": 2140,
+        "wires": [
+            [
+                "6003e0bf3266b49a"
+            ]
+        ]
+    },
+    {
+        "id": "1536d2b8d248d1ef",
+        "type": "http request",
+        "z": "30caf83444db3758",
+        "name": "7",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?id=1580240&appid=a8b048b645dd97ed5a954a5113f25b5b&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 690,
+        "y": 2180,
+        "wires": [
+            [
+                "6003e0bf3266b49a"
+            ]
+        ]
+    },
+    {
+        "id": "aa37e9b909827749",
+        "type": "http request",
+        "z": "30caf83444db3758",
+        "name": "8",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?id=1572151&appid=a8b048b645dd97ed5a954a5113f25b5b&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 690,
+        "y": 2220,
+        "wires": [
+            [
+                "6003e0bf3266b49a"
+            ]
+        ]
+    },
+    {
+        "id": "33216d8f72f7f40e",
+        "type": "http request",
+        "z": "30caf83444db3758",
+        "name": "9",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?id=1586203&appid=a8b048b645dd97ed5a954a5113f25b5b&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 690,
+        "y": 2260,
+        "wires": [
+            [
+                "6003e0bf3266b49a"
+            ]
+        ]
+    },
+    {
+        "id": "d595a3982ffcdc0a",
+        "type": "http request",
+        "z": "30caf83444db3758",
+        "name": "10",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?id=1568510&appid=a8b048b645dd97ed5a954a5113f25b5b&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 690,
+        "y": 2300,
+        "wires": [
+            [
+                "6003e0bf3266b49a"
+            ]
+        ]
+    },
+    {
+        "id": "50c4b0756d795332",
+        "type": "http request",
+        "z": "30caf83444db3758",
+        "name": "11",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?id=1568574&appid=a8b048b645dd97ed5a954a5113f25b5b&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 690,
+        "y": 2340,
+        "wires": [
+            [
+                "6003e0bf3266b49a"
+            ]
+        ]
+    },
+    {
+        "id": "4cec3f2febc89c33",
+        "type": "http request",
+        "z": "30caf83444db3758",
+        "name": "12",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?id=1562414&appid=a8b048b645dd97ed5a954a5113f25b5b&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 690,
+        "y": 2380,
+        "wires": [
+            [
+                "6003e0bf3266b49a"
+            ]
+        ]
+    },
+    {
+        "id": "7e60be156430c5b9",
+        "type": "http request",
+        "z": "30caf83444db3758",
+        "name": "13",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?id=1584071&appid=a8b048b645dd97ed5a954a5113f25b5b&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 690,
+        "y": 2420,
+        "wires": [
+            [
+                "6003e0bf3266b49a"
+            ]
+        ]
+    },
+    {
+        "id": "ef355bcf53b411d8",
+        "type": "http request",
+        "z": "30caf83444db3758",
+        "name": "14",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?id=1573517&appid=a8b048b645dd97ed5a954a5113f25b5b&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 690,
+        "y": 2460,
+        "wires": [
+            [
+                "6003e0bf3266b49a"
+            ]
+        ]
+    },
+    {
+        "id": "b2f850dc6fa49a15",
+        "type": "http request",
+        "z": "30caf83444db3758",
+        "name": "15",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?id=1562798&appid=a8b048b645dd97ed5a954a5113f25b5b&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 690,
+        "y": 2500,
+        "wires": [
+            [
+                "6003e0bf3266b49a"
+            ]
+        ]
+    },
+    {
+        "id": "c8b17c167a6c6cb0",
+        "type": "change",
+        "z": "30caf83444db3758",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Nhiệt độ",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 1180,
+        "wires": [
+            [
+                "bf35d40ea562aefc"
+            ]
+        ]
+    },
+    {
+        "id": "af30b2ebe47973e9",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "savethoitiet",
+        "func": "flow.set(\"thoitiet\",msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 2000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2624365aa9482f4b",
+        "type": "ui_button",
+        "z": "30caf83444db3758",
+        "name": "",
+        "group": "e25991640517dc95",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Gửi thông tin về email",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "send",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1180,
+        "y": 2220,
+        "wires": [
+            [
+                "176439a5a3c1789d"
+            ]
+        ]
+    },
+    {
+        "id": "d05b53e93c6c7496",
+        "type": "switch",
+        "z": "30caf83444db3758",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "40",
+                "vt": "str"
+            },
+            {
+                "t": "lte",
+                "v": "10",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 330,
+        "y": 1260,
+        "wires": [
+            [
+                "8c7ace4e68b9de05"
+            ],
+            [
+                "8ce0db261edc8cdc"
+            ]
+        ]
+    },
+    {
+        "id": "ed3eede113bc8f24",
+        "type": "e-mail",
+        "z": "30caf83444db3758",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 930,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "8c7ace4e68b9de05",
+        "type": "change",
+        "z": "30caf83444db3758",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "CẢNH BÁO NHIỆT ĐỘ TRÊN XE QUÁ CAO !!!",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 1220,
+        "wires": [
+            [
+                "1158cda9b8c7bab1"
+            ]
+        ]
+    },
+    {
+        "id": "8ce0db261edc8cdc",
+        "type": "change",
+        "z": "30caf83444db3758",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "CẢNH BÁO NHIỆT ĐỘ TRÊN XE QUÁ THẤP !!!",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 1280,
+        "wires": [
+            [
+                "1158cda9b8c7bab1"
+            ]
+        ]
+    },
+    {
+        "id": "1158cda9b8c7bab1",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "get_email",
+        "func": "msg.to = flow.get(\"email\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 1240,
+        "wires": [
+            [
+                "ed3eede113bc8f24"
+            ]
+        ]
+    },
+    {
+        "id": "65c3174678758a4a",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "get_email",
+        "func": "msg.to = flow.get(\"email\");\nmsg.topic =\"CẢNH BÁO SỐ NGƯỜI TRÊN XE ĐÃ QUÁ TẢI !!!\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 260,
+        "wires": [
+            [
+                "55a0a91a0aaa7ad7"
+            ]
+        ]
+    },
+    {
+        "id": "55a0a91a0aaa7ad7",
+        "type": "e-mail",
+        "z": "30caf83444db3758",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 770,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "f7888d766538d8df",
+        "type": "switch",
+        "z": "30caf83444db3758",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "30",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 330,
+        "y": 260,
+        "wires": [
+            [
+                "65c3174678758a4a"
+            ]
+        ]
+    },
+    {
+        "id": "822853970eede6f0",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "dieu_kien_den",
+        "func": "if(msg.payload <= 1000){\n    msg.payload = \"Bright\";\n} else{\n    msg.payload = \"Dark\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 660,
+        "wires": [
+            [
+                "70e9b83d52a45ad1",
+                "57929c21816a4abb"
+            ]
+        ]
+    },
+    {
+        "id": "c2537ac9d744b69d",
+        "type": "mqtt in",
+        "z": "30caf83444db3758",
+        "name": "",
+        "topic": "value_smk",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "1da70853d81f2476",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 60,
+        "y": 1620,
+        "wires": [
+            [
+                "e7693049910e1ca9",
+                "8d3fc0c75f948728",
+                "3e2e7ae44df0e978",
+                "99aa0ff34b446b62"
+            ]
+        ]
+    },
+    {
+        "id": "e7693049910e1ca9",
+        "type": "switch",
+        "z": "30caf83444db3758",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "25",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 270,
+        "y": 1720,
+        "wires": [
+            [
+                "99093109aaddb341"
+            ]
+        ]
+    },
+    {
+        "id": "99093109aaddb341",
+        "type": "change",
+        "z": "30caf83444db3758",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "CẢNH BÁO ĐÃ PHÁT HIỆN KHÓI TRONG XE",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 1720,
+        "wires": [
+            [
+                "5b14d7b3f64ff479"
+            ]
+        ]
+    },
+    {
+        "id": "5b14d7b3f64ff479",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "",
+        "func": "msg.to = flow.get(\"email\");\npayload={\"Khói vượt quá mức cho phép(>=25)\":msg.payload};\nmsg.payload=payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 1720,
+        "wires": [
+            [
+                "3b5ce6cf42c99886"
+            ]
+        ]
+    },
+    {
+        "id": "ffb61c05da5915d0",
+        "type": "e-mail",
+        "z": "30caf83444db3758",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 930,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "4eacabcc9362a22d",
+        "type": "ui_led",
+        "z": "30caf83444db3758",
+        "order": 4,
+        "group": "750a167db2ebc3ba",
+        "width": "6",
+        "height": "2",
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "ON",
+                "valueType": "str"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 470,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "8d3fc0c75f948728",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "dieu_kien",
+        "func": "flow.set(\"khoi\",msg.payload)\nif(msg.payload >= 25){\n    msg.payload = \"ON\";\n} \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1560,
+        "wires": [
+            [
+                "4eacabcc9362a22d"
+            ]
+        ]
+    },
+    {
+        "id": "d1ab3370b02d8cb8",
+        "type": "ui_text",
+        "z": "30caf83444db3758",
+        "group": "750a167db2ebc3ba",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "ĐÈN CẢNH BÁO KHÓI !",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 670,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "01a161277df7d0a1",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "max",
+        "func": "m = parseFloat(msg.payload)\n\nmax = flow.get(\"max\") || 0\n\n\nif(m>max){\n   \n        flow.set(\"max\",m)\n        max = flow.get(\"max\")\n        \n}\n\n\n\nreturn {payload:{max:max}};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 340,
+        "wires": [
+            [
+                "621859f4e4175994"
+            ]
+        ]
+    },
+    {
+        "id": "81d6376922432691",
+        "type": "ui_gauge",
+        "z": "30caf83444db3758",
+        "name": "",
+        "group": "8c5febd962f8fd21",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Số người lên xe nhiều nhất trong ngày",
+        "label": " ",
+        "format": "{{msg.payload.max}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 730,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "d0dc9b972ab23cad",
+        "type": "e-mail",
+        "z": "30caf83444db3758",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 890,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "3e2e7ae44df0e978",
+        "type": "ui_gauge",
+        "z": "30caf83444db3758",
+        "name": "",
+        "group": "750a167db2ebc3ba",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Mức độ khói",
+        "label": " ",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 490,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "e358ee23583a3ac0",
+        "type": "moment",
+        "z": "30caf83444db3758",
+        "name": "ngay",
+        "topic": "",
+        "input": "",
+        "inputType": "msg",
+        "inTz": "Asia/Saigon",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "DD",
+        "locale": "en-US",
+        "output": "payload",
+        "outputType": "msg",
+        "outTz": "Asia/Saigon",
+        "x": 370,
+        "y": 520,
+        "wires": [
+            [
+                "3d1c2c35a3d35464"
+            ]
+        ]
+    },
+    {
+        "id": "f0bbad615d487a51",
+        "type": "inject",
+        "z": "30caf83444db3758",
+        "name": "",
+        "props": [],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 520,
+        "wires": [
+            [
+                "e358ee23583a3ac0"
+            ]
+        ]
+    },
+    {
+        "id": "3d1c2c35a3d35464",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "save_ngay",
+        "func": "flow.set(\"time0\",msg.payload)\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "621859f4e4175994",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "delete_data_max",
+        "func": "time1 = flow.get(\"time1\") || 0;\n\ntime0 = flow.get(\"time0\");\n\n/*if(time == 0 && (time1==28 || time1==31)){\n        time1 = 0;\n        flow.set(\"time1\",time1)\n    }*/\n\nif(time0 != time1 ){\n    msg.payload = 0;\n    flow.set(\"max\",0)\n    //time1 = time1 +1;\n    flow.set(\"time1\",time0)\n    \n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 340,
+        "wires": [
+            [
+                "81d6376922432691"
+            ]
+        ]
+    },
+    {
+        "id": "b8a2888b23c78037",
+        "type": "inject",
+        "z": "30caf83444db3758",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "05 00 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 390,
+        "y": 300,
+        "wires": [
+            [
+                "621859f4e4175994"
+            ]
+        ]
+    },
+    {
+        "id": "dde7def4f26ff331",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "get_max",
+        "func": "msg.topic = flow.get(\"max\");\n\npayload={\"Số người nhiều nhất hiện tại\":msg.topic};\nmsg.payload=payload;\nmsg.to = flow.get(\"email\");\nmsg.topic =\"Số người nhiều nhất\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 400,
+        "wires": [
+            [
+                "d0dc9b972ab23cad"
+            ]
+        ]
+    },
+    {
+        "id": "2cc22929a47b82b3",
+        "type": "ui_template",
+        "z": "30caf83444db3758",
+        "group": "e25991640517dc95",
+        "name": "Node-Red Dashboard Custom CSS",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n\n    /*Main background*/\n    body {\n\tbackground: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);\n\tbackground-size: 400% 400%;\n\tanimation: gradient 15s ease infinite;\n\theight: 100vh;\n}\n\n@keyframes gradient {\n\t0% {\n\t\tbackground-position: 0% 50%;\n\t}\n\t50% {\n\t\tbackground-position: 100% 50%;\n\t}\n\t100% {\n\t\tbackground-position: 0% 50%;\n\t}\n}\n\n    /*Top bar*/\n    body.nr-dashboard-theme md-toolbar,\n    body.nr-dashboard-theme md-content md-card {\n        background-color: transparent !important;\n        color: #FFFFFF !important;\n    }\n\n\n    /*Left menu*/\n    /*Sidebar*/\n    body.nr-dashboard-theme md-sidenav {\n        color: white !important;\n        background-color: rgba(0,0,0,0) !important;\n    }\n    /*Hover selection*/\n    a.md-no-style, button.md-no-style {\n        border-radius: 10px !important;\n    }\n    /*Selected*/\n    .nr-menu-item-active div button {\n        border-right: 4px solid rgb(41 98 255) !important;\n    }\n    /*List*/\n    body.nr-dashboard-theme md-sidenav div.md-list-item-inner {\n        color: white !important;\n        background-color: rgba(40,85,165,1) !important;\n        border-radius: 10px !important;\n    }\n\n\n    /*Groups*/\n    ui-card-panel {\n        background-color: rgba(255,255,255,0.1) !important;\n        border-radius: 10px !important;\n    }\n    .nr-dashboard-theme ui-card-panel {\n        border: none !important;\n    }\n    /*Name groups*/\n    .nr-dashboard-theme ui-card-panel p.nr-dashboard-cardtitle {\n        color: rgba(255, 255, 255, 0.5) !important;\n    }\n\n\n    /*Bouttons*/\n    .nr-dashboard-theme .nr-dashboard-button .md-button {\n        background-color: rgba(255,255,255,.1) !important;\n    }\n    .md-button {\n        border-radius: 10px !important;\n    }\n\n\n    /*Dropdown menu*/\n    .nr-dashboard-theme md-select-menu{\n        background-color: rgba(40,85,165,1) !important;\n    }\n    .nr-dashboard-theme md-select-menu, .nr-dashboard-theme md-select-menu md-option {\n        background-color: transparent !important;\n    }\n    .nr-dashboard-theme .md-select-menu-container {\n        border-radius: 10px !important;\n        border: none !important;\n    }\n    .nr-dashboard-theme md-select-menu md-option[selected] {\n        color: white !important;\n        background-color: #1a3566 !important;\n    }\n\n    /*Template*/\n    md-card>img, md-card>md-card-header img, md-card md-card-title-media img {\n        border-radius: 10px !important;\n    }\n\n    /* Color picker text BG */\n    .nr-dashboard-theme .color-picker-input-wrapper > input {\n        color: white !important;\n        background-color: transparent !important;\n    }\n\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "global",
+        "className": "",
+        "x": 160,
+        "y": 3680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "47b9b45dd36122ce",
+        "type": "ui_form",
+        "z": "30caf83444db3758",
+        "name": "",
+        "label": "",
+        "group": "e25991640517dc95",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Change email subject",
+                "value": "d",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "d": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 790,
+        "y": 2880,
+        "wires": [
+            [
+                "6bbf20c6a973e6da"
+            ]
+        ]
+    },
+    {
+        "id": "71918ca6e3426136",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "get_max",
+        "func": "msg.topic = flow.get(\"max\");\n\npayload={\"Date\":msg.to,\"Số người nhiều nhất trong ngày hôm nay\":msg.topic};\nmsg.payload=payload;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 3220,
+        "wires": [
+            [
+                "e0662241c3d49adf"
+            ]
+        ]
+    },
+    {
+        "id": "b45a581eedc9a8fd",
+        "type": "moment",
+        "z": "30caf83444db3758",
+        "name": "ngay_thang_gio",
+        "topic": "",
+        "input": "",
+        "inputType": "msg",
+        "inTz": "Asia/Saigon",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "[Date: ]YYYY-MM-DD [Time: ]HH:mm:ss",
+        "locale": "en-US",
+        "output": "to",
+        "outputType": "msg",
+        "outTz": "Asia/Saigon",
+        "x": 420,
+        "y": 3220,
+        "wires": [
+            [
+                "71918ca6e3426136"
+            ]
+        ]
+    },
+    {
+        "id": "b2923e23ab13b60f",
+        "type": "file",
+        "z": "30caf83444db3758",
+        "name": "",
+        "filename": "D:\\VLDC\\21126089(MAX_Count).txt",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1130,
+        "y": 3220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "afce897dcef752be",
+        "type": "inject",
+        "z": "30caf83444db3758",
+        "name": "ngay",
+        "props": [],
+        "repeat": "",
+        "crontab": "00 23 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 3220,
+        "wires": [
+            [
+                "b45a581eedc9a8fd"
+            ]
+        ]
+    },
+    {
+        "id": "e0662241c3d49adf",
+        "type": "json",
+        "z": "30caf83444db3758",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 850,
+        "y": 3220,
+        "wires": [
+            [
+                "b2923e23ab13b60f"
+            ]
+        ]
+    },
+    {
+        "id": "7a6dadb0adac9465",
+        "type": "moment",
+        "z": "30caf83444db3758",
+        "name": "ngay_thang_gio",
+        "topic": "",
+        "input": "",
+        "inputType": "msg",
+        "inTz": "Asia/Saigon",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "[Date: ]YYYY-MM-DD [Time: ]HH:mm:ss",
+        "locale": "en-US",
+        "output": "to",
+        "outputType": "msg",
+        "outTz": "Asia/Saigon",
+        "x": 420,
+        "y": 3280,
+        "wires": [
+            [
+                "7b235a23352bcaf7"
+            ]
+        ]
+    },
+    {
+        "id": "22c0267558ea37a0",
+        "type": "inject",
+        "z": "30caf83444db3758",
+        "name": "lap",
+        "props": [],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 3280,
+        "wires": [
+            [
+                "96a9a288dfcf361c"
+            ]
+        ]
+    },
+    {
+        "id": "3b5ce6cf42c99886",
+        "type": "json",
+        "z": "30caf83444db3758",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 790,
+        "y": 1720,
+        "wires": [
+            [
+                "ffb61c05da5915d0"
+            ]
+        ]
+    },
+    {
+        "id": "31d2b7a7baa8d54f",
+        "type": "ui_text",
+        "z": "30caf83444db3758",
+        "group": "f10512a1143e0cb0",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Thành phố",
+        "format": "{{msg.payload.name}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1130,
+        "y": 2300,
+        "wires": []
+    },
+    {
+        "id": "0f53610d9f7cde7f",
+        "type": "ui_gauge",
+        "z": "30caf83444db3758",
+        "name": "",
+        "group": "ab940e2a87dd9ab2",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Độ nén không khí",
+        "label": "hPa",
+        "format": "{{msg.payload.main.pressure}}",
+        "min": 0,
+        "max": "2000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 1150,
+        "y": 2040,
+        "wires": []
+    },
+    {
+        "id": "ade2cfaeaa44bc84",
+        "type": "ui_text",
+        "z": "30caf83444db3758",
+        "group": "395904b8f60c7667",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Thành phố",
+        "format": "{{msg.payload.name}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1130,
+        "y": 2340,
+        "wires": []
+    },
+    {
+        "id": "0d188c72c8906061",
+        "type": "ui_text",
+        "z": "30caf83444db3758",
+        "group": "7bc5f62e0913ba30",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Thành phố",
+        "format": "{{msg.payload.name}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1130,
+        "y": 2380,
+        "wires": []
+    },
+    {
+        "id": "274b75402cbef424",
+        "type": "ui_text",
+        "z": "30caf83444db3758",
+        "group": "ab940e2a87dd9ab2",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Thành phố",
+        "format": "{{msg.payload.name}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1130,
+        "y": 2420,
+        "wires": []
+    },
+    {
+        "id": "e0f322bef7bce243",
+        "type": "ui_chart",
+        "z": "30caf83444db3758",
+        "name": "",
+        "group": "750a167db2ebc3ba",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Biểu đồ khói",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 490,
+        "y": 1640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "99aa0ff34b446b62",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "topic",
+        "func": "msg.topic=\"Khói\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 1640,
+        "wires": [
+            [
+                "e0f322bef7bce243"
+            ]
+        ]
+    },
+    {
+        "id": "08a9c8877d1489ba",
+        "type": "comment",
+        "z": "30caf83444db3758",
+        "name": "Các node liên quan đến số người",
+        "info": "",
+        "x": 170,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "1465951de90c5745",
+        "type": "comment",
+        "z": "30caf83444db3758",
+        "name": "Các node liên quan đến đèn",
+        "info": "",
+        "x": 160,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "4fc20463e218ae09",
+        "type": "comment",
+        "z": "30caf83444db3758",
+        "name": "Các node liên quan đến nhiệt độ",
+        "info": "",
+        "x": 170,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "cb0e9e26af0374c5",
+        "type": "comment",
+        "z": "30caf83444db3758",
+        "name": "Các node liên quan tới khói",
+        "info": "",
+        "x": 150,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "09ea607cc74b44b2",
+        "type": "comment",
+        "z": "30caf83444db3758",
+        "name": "Các node liên quan đến thời tiết",
+        "info": "",
+        "x": 170,
+        "y": 1860,
+        "wires": []
+    },
+    {
+        "id": "349150444d964f07",
+        "type": "comment",
+        "z": "30caf83444db3758",
+        "name": "Các node nhập thông tin người dùng như tên,ngày sinh,chủ đền muốn gửi về email,...",
+        "info": "",
+        "x": 340,
+        "y": 2600,
+        "wires": []
+    },
+    {
+        "id": "436b3d10897bb311",
+        "type": "comment",
+        "z": "30caf83444db3758",
+        "name": "Các node gửi thông tin về file",
+        "info": "",
+        "x": 160,
+        "y": 3140,
+        "wires": []
+    },
+    {
+        "id": "55fb91549b5eb082",
+        "type": "comment",
+        "z": "30caf83444db3758",
+        "name": "Các node liên quan tới thời gian",
+        "info": "",
+        "x": 150,
+        "y": 3400,
+        "wires": []
+    },
+    {
+        "id": "27610525bebb6961",
+        "type": "function",
+        "z": "30caf83444db3758",
+        "name": "khoi",
+        "func": "msg.payload = flow.get(\"khoi\");\nmsg.to = flow.get(\"email\");\nmsg.topic = flow.get(\"e\")||\"Độ khói\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 1780,
+        "wires": [
+            [
+                "2e37cc5d5d6b39b2"
+            ]
+        ]
+    },
+    {
+        "id": "b3bb3c32b21a6bb2",
+        "type": "ui_form",
+        "z": "30caf83444db3758",
+        "name": "",
+        "label": "",
+        "group": "750a167db2ebc3ba",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Change email subject",
+                "value": "e",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "e": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 530,
+        "y": 2780,
+        "wires": [
+            [
+                "6bbf20c6a973e6da"
+            ]
+        ]
+    },
+    {
+        "id": "351c77c421316598",
+        "type": "ui_button",
+        "z": "30caf83444db3758",
+        "name": "",
+        "group": "750a167db2ebc3ba",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Gửi thông tin về email",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "send",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 180,
+        "y": 1780,
+        "wires": [
+            [
+                "27610525bebb6961"
+            ]
+        ]
+    },
+    {
+        "id": "2e37cc5d5d6b39b2",
+        "type": "e-mail",
+        "z": "30caf83444db3758",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 550,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "e4259bc6455481f5",
+        "type": "comment",
+        "z": "30caf83444db3758",
+        "name": "node trang trí",
+        "info": "",
+        "x": 110,
+        "y": 3620,
+        "wires": []
+    },
+    {
+        "id": "1b681a530d4d3a8b",
+        "type": "ui_spacer",
+        "z": "30caf83444db3758",
+        "name": "spacer",
+        "group": "",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "84a35b6eac2bd0ac",
+        "type": "ui_spacer",
+        "z": "30caf83444db3758",
+        "name": "spacer",
+        "group": "33425532b6759282",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "8ed2b164c2b82e07",
+        "type": "ui_spacer",
+        "z": "30caf83444db3758",
+        "name": "spacer",
+        "group": "33425532b6759282",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ab58372f3a0b5deb",
+        "type": "ui_spacer",
+        "z": "30caf83444db3758",
+        "name": "spacer",
+        "group": "33425532b6759282",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "81b48323e59e7fb8",
+        "type": "ui_spacer",
+        "z": "30caf83444db3758",
+        "name": "spacer",
+        "group": "33425532b6759282",
+        "order": 10,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "3c4a8a9b0d1c8359",
+        "type": "ui_spacer",
+        "z": "30caf83444db3758",
+        "name": "spacer",
+        "group": "33425532b6759282",
+        "order": 11,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d95313663bc5ac89",
+        "type": "ui_spacer",
+        "z": "30caf83444db3758",
+        "name": "spacer",
+        "group": "eea166b605f3a44d",
+        "order": 10,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "6028f9b0fc533b52",
+        "type": "ui_spacer",
+        "z": "30caf83444db3758",
+        "name": "spacer",
+        "group": "eea166b605f3a44d",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "71daf6b9d817f12a",
+        "type": "ui_spacer",
+        "z": "30caf83444db3758",
+        "name": "spacer",
+        "group": "4962aa73c8a15fe8",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "227832650446f171",
+        "type": "ui_spacer",
+        "z": "30caf83444db3758",
+        "name": "spacer",
+        "group": "4962aa73c8a15fe8",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "334126e9d8c0ba2c",
+        "type": "ui_spacer",
+        "z": "30caf83444db3758",
+        "name": "spacer",
+        "group": "eea166b605f3a44d",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2295e88b9bad4e06",
+        "type": "ui_spacer",
+        "z": "30caf83444db3758",
+        "name": "spacer",
+        "group": "eea166b605f3a44d",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "1da70853d81f2476",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "eea166b605f3a44d",
+        "type": "ui_group",
+        "name": "Điều khiển đèn",
+        "tab": "bc8503140653ebb6",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d117d717b92e5b33",
+        "type": "ui_group",
+        "name": "Nhiệt độ trên xe",
+        "tab": "bc8503140653ebb6",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8c5febd962f8fd21",
+        "type": "ui_group",
+        "name": "Số người",
+        "tab": "bc8503140653ebb6",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6c21c615b4ad9b2e",
+        "type": "ui_group",
+        "name": "Thông tin đã nhập",
+        "tab": "5e923ae4b6c5c6e8",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "669d1f94be3aa75f",
+        "type": "ui_group",
+        "name": "Thông tin khách hàng",
+        "tab": "5e923ae4b6c5c6e8",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4962aa73c8a15fe8",
+        "type": "ui_group",
+        "name": "Date/Time",
+        "tab": "bc8503140653ebb6",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e25991640517dc95",
+        "type": "ui_group",
+        "name": "Thành phố",
+        "tab": "cf41cf806d5664d2",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f10512a1143e0cb0",
+        "type": "ui_group",
+        "name": "Nhiệt độ",
+        "tab": "cf41cf806d5664d2",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "395904b8f60c7667",
+        "type": "ui_group",
+        "name": "Sức gió",
+        "tab": "cf41cf806d5664d2",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7bc5f62e0913ba30",
+        "type": "ui_group",
+        "name": "Độ ẩm",
+        "tab": "cf41cf806d5664d2",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7b2e1d468ecab73f",
+        "type": "ui_group",
+        "name": "Thông tin phản hồi từ email",
+        "tab": "5e923ae4b6c5c6e8",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "750a167db2ebc3ba",
+        "type": "ui_group",
+        "name": "Cảm biến khói",
+        "tab": "bc8503140653ebb6",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ab940e2a87dd9ab2",
+        "type": "ui_group",
+        "name": "Độ nén không khí",
+        "tab": "cf41cf806d5664d2",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "bc8503140653ebb6",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "5e923ae4b6c5c6e8",
+        "type": "ui_tab",
+        "name": "Thông tin đăng nhập",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "cf41cf806d5664d2",
+        "type": "ui_tab",
+        "name": "Thời tiết hôm nay",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    }
+]

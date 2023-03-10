@@ -1,0 +1,7 @@
+week 01: https://www.tinkercad.com/things/j3rS1YwwT22-stunning-kup/editel?sharecode=wt8YZtN5Ut_yYdESsBV6y3gtfiyDLFQ39MUu_gc57AM
+week 02: https://www.tinkercad.com/things/cupxuucDyi3-smashing-bruticus-rottis/editel?sharecode=4WPiw9_zZsp-hzZTYaStZnzi1_AyIqYXLy-tjAFqyjI
+week 03: https://www.tinkercad.com/things/k2BWa8Z2RNk-21126074/editel?sharecode=OFc18sohN3dR_rjxHeP67Ndj5SsvYigo61s4Vp7IDR4
+week 07: 
+    Hà Nội: https://api.openweathermap.org/data/2.5/weather?id=1581130&appid=a8b048b645dd97ed5a954a5113f25b5b&units=metric
+    Hồ Chí Minh: https://api.openweathermap.org/data/2.5/weather?id=1566083&appid=a8b048b645dd97ed5a954a5113f25b5b&units=metric
+    Nghệ An: https://api.openweathermap.org/data/2.5/weather?id=1559969&appid=a8b048b645dd97ed5a954a5113f25b5b&units=metric
